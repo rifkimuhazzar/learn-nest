@@ -1,0 +1,111 @@
+### User - Register
+post http://localhost:3000/api/users
+Content-Type: application/json
+
+{
+  "username": "helloworld",
+  "password": "helloworld123",
+  "name": "Hello World"
+}
+
+### User - Login
+### token - e1988b92-dd4f-49ae-a4f1-ef0ab94e17e1
+post http://localhost:3000/api/users/login
+Content-Type: application/json
+
+{
+  "username": "helloworld",
+  "password": "hellonext123"
+}
+
+### User - Get
+get http://localhost:3000/api/users/current
+Authorization: e1988b92-dd4f-49ae-a4f1-ef0ab94e17e1
+
+### User - Update
+patch http://localhost:3000/api/users/current
+Authorization: e1988b92-dd4f-49ae-a4f1-ef0ab94e17e1
+Content-Type: application/json
+
+{
+  "name": "Hello Next",
+  "password": "hellonext123"
+}
+
+### User - Logout
+delete http://localhost:3000/api/users/current
+Authorization: 9ece6d72-8a60-4976-9295-8b11255f3869
+
+### Contact - Create
+post http://localhost:3000/api/contacts
+Authorization: e1988b92-dd4f-49ae-a4f1-ef0ab94e17e1
+Content-Type: application/json
+
+{
+  "first_name": "Hello",
+  "last_name": "World",
+  "email": "helloworld@example.com",
+  "phone": "01010101"
+}
+
+### Contact - Update
+put http://localhost:3000/api/contacts/575
+Authorization: e1988b92-dd4f-49ae-a4f1-ef0ab94e17e1
+Content-Type: application/json
+
+{
+  "first_name": "New Hello",
+  "last_name": "New World",
+  "email": "newhelloworld@example.com",
+  "phone": "01010101"
+}
+
+### Contact - Get
+get http://localhost:3000/api/contacts/575
+Authorization: e1988b92-dd4f-49ae-a4f1-ef0ab94e17e1
+
+### Contact - Delete
+delete http://localhost:3000/api/contacts/576
+Authorization: e1988b92-dd4f-49ae-a4f1-ef0ab94e17e1
+
+### Contact - Search
+get http://localhost:3000/api/contacts?size=1&page=2
+Authorization: e1988b92-dd4f-49ae-a4f1-ef0ab94e17e1
+
+### Address - Create
+post http://localhost:3000/api/contacts/575/addresses
+Authorization: e1988b92-dd4f-49ae-a4f1-ef0ab94e17e1
+Content-Type: application/json
+
+{
+  "street": "Street Test",
+  "city": "City Test",
+  "province": "Province Test",
+  "country": "Country Test",
+  "postal_code": "01010101"
+}
+
+### Address - Get
+get http://localhost:3000/api/contacts/575/addresses/111
+Authorization: e1988b92-dd4f-49ae-a4f1-ef0ab94e17e1
+
+### Address - List
+get http://localhost:3000/api/contacts/575/addresses
+Authorization: e1988b92-dd4f-49ae-a4f1-ef0ab94e17e1
+
+### Address - Update
+put http://localhost:3000/api/contacts/575/addresses/111
+Authorization: e1988b92-dd4f-49ae-a4f1-ef0ab94e17e1
+Content-Type: application/json
+
+{
+  "street": "Street X",
+  "city": "City X",
+  "province": "Province X",
+  "country": "Country X",
+  "postal_code": "01010101"
+}
+
+### Address - Delete
+delete http://localhost:3000/api/contacts/575/addresses/116
+Authorization: e1988b92-dd4f-49ae-a4f1-ef0ab94e17e1
